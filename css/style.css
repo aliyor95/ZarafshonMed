@@ -1,9 +1,4 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v7.0.29,
-* Autoprefixer: v9.7.6
-* Browsers: last 4 version
-*/
+
 
 *,
 *::before,
@@ -118,12 +113,16 @@ img {
     background: #fff;
     -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-    height: 95px;
+    height: 75px;
     left: 0;
     padding-top: 0;
     -webkit-transition: all .5s ease-in;
     -o-transition: all .5s ease-in;
     transition: all .5s ease-in;
+}
+
+.nav.fixed .logo img {
+    width: 80%;
 }
 
 .nav.fixed .logo::after {
@@ -387,7 +386,7 @@ img {
     font-family: 'Montserrat Alternates';
     position: absolute;
     z-index: 3;
-    background: url('../img/gradient.jpg') no-repeat center;
+    background: url('../img/gradient.webp') no-repeat center;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-animation-duration: 5s;
@@ -429,7 +428,7 @@ img {
 /* Section
 ============================================= */
 .section {
-    margin-bottom: 100px;
+    margin-bottom: 0;
 }
 
 .section__title {
@@ -440,6 +439,11 @@ img {
     font-family: "Montserrat Alternates";
     margin-bottom: 40px;
     margin-top: 80px;
+}
+
+.sec-title {
+    margin-top: 0;
+    padding-top: 80px;
 }
 
 .section__content-top {
@@ -604,8 +608,12 @@ img {
 
 /* Article
 ============================================= */
+.article {
+    padding-top: 80px;
+}
+
 .article__inner {
-    background: url('../img/article-bg.jpg') no-repeat center;
+    background: url('../img/article-bg.webp') no-repeat center;
     background-size: cover;
     width: 100%;
     height: 550px;
@@ -615,7 +623,7 @@ img {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    margin-bottom: 50px;
+    margin-bottom: 0;
 }
 
 .article__title {
@@ -1037,10 +1045,24 @@ img {
     color: #fff;
 }
 
+.news1-title {
+    margin: 50px auto;
+    text-align: center;
+}
+
+.news1-bottom {
+    padding-bottom: 50px;
+    margin-top: 30px;
+}
+
+.news1-bottom h3 {
+    padding-bottom: 20px;
+}
+
 /* Contact
 ============================================= */
 .contact {
-    background: url('../img/contact-bg.jpg') no-repeat center;
+    background: url('../img/contact-bg.webp') no-repeat center;
     background-size: cover;
     width: 100%;
     height: 850px;
@@ -1100,7 +1122,7 @@ img {
 }
 
 form {
-    background: url('../img/form.png') no-repeat center;
+    background: url('../img/form.webp') no-repeat center;
     width: 522px;
     height: 625px;
 }
@@ -1167,10 +1189,12 @@ form {
     color: #002b32;
     font-weight: 300;
     font-family: "Montserrat";
-    padding: 29px 0 29px 25px;
+    padding: 28px 0 28px 25px;
     margin: 20px 0;
+    max-height: 80px;
     outline: none;
-    height: 80px;
+    resize: none;
+
 }
 
 .form__info {
@@ -1187,7 +1211,7 @@ form {
     -ms-flex-align: center;
     align-items: center;
     margin-top: 15px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .chekbox {
@@ -1209,9 +1233,11 @@ form {
     border-radius: 28px;
     filter: drop-shadow(0 0 10px #a1f2ff);
     background-color: #007d91;
-    padding: 20px 35px;
+    padding: 15px;
     cursor: pointer;
     -webkit-filter: drop-shadow(0 0 10px #a1f2ff);
+    border: none;
+    outline: none;
 }
 
 .form-link:hover {
@@ -1273,7 +1299,7 @@ form {
 /* Footer
 ============================================= */
 .footer {
-    background: url('../img/footer-bg.jpg') no-repeat center;
+    background: url('../img/footer-bg.webp') no-repeat center;
     background-size: cover;
     width: 100%;
     height: 220px;
@@ -1451,8 +1477,12 @@ form {
 }
 
 .modal__box {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 100%;
     margin-bottom: 50px;
 }
@@ -1463,9 +1493,15 @@ form {
     border-radius: 30px;
     background-color: #ffffff;
     border: 1px solid #d7d7d7;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     -ms-border-radius: 30px;
@@ -1537,6 +1573,66 @@ form {
     font-family: "Montserrat Alternates";
     margin-top: 10px;
     max-width: 500px;
+}
+
+/* Order
+============================================= */
+.body-order {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background: url('../img/gradient_1.webp') no-repeat center;
+    background-size: cover;
+}
+
+.order {
+    text-align: center;
+    max-width: 1200px;
+    padding: 0 15px;
+}
+
+.order h1 {
+    font-size: 90px;
+    font-family: 'Roboto';
+    color: #fff;
+}
+
+.order h3 {
+    font-size: 50px;
+    font-family: 'Roboto';
+    color: #fff;
+    margin-bottom: 50px;
+}
+
+.order a {
+    font-size: 30px;
+    font-family: 'Roboto';
+    color: #fff;
+    margin-top: 100px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+    background: #00fc69;
+    border: 5px solid rgb(0, 204, 61);
+}
+
+.order a:hover {
+    background: none;
 }
 
 /* Responsive
@@ -1802,11 +1898,15 @@ form {
     }
 
     .article__inner {
-        margin-bottom: 20px;
+        margin-bottom: 0;
     }
 
     .article__content {
         margin-bottom: 50px;
+    }
+
+    .section__content-box img {
+        width: 13%;
     }
 }
 
@@ -1830,7 +1930,8 @@ form {
 
 @media (max-width: 768px) {
     .modal__box {
-        flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
     }
 
     .modal__box-left {
@@ -1846,6 +1947,10 @@ form {
 
     .modal__box-right p {
         max-width: 700px;
+    }
+
+    .sec-title {
+        padding-top: 20px;
     }
 }
 
@@ -1997,7 +2102,7 @@ form {
     }
 
     .form-link {
-        padding: 16px 35px;
+        padding: 15px;
     }
 
     .circle-1,
@@ -2013,6 +2118,59 @@ form {
     .news {
         margin: 15px 0;
     }
+
+    .section__content-box img {
+        margin-left: 10px;
+        margin-right: 11px;
+        width: 20%;
+    }
+
+    .section__content-box p {
+        font-size: 16px;
+    }
+
+    .section__content-right h3 {
+        padding: 20px 0 20px 15px;
+    }
+
+    .section__content-right p {
+        padding: 15px;
+        padding-top: 0;
+        text-align: justify;
+    }
+
+    .article {
+        padding-top: 30px;
+    }
+
+    .news1-title {
+        margin: 30px auto;
+        text-align: center;
+    }
+    
+    .news1-bottom {
+        padding-bottom: 50px;
+        margin-top: 30px;
+    }
+
+    .news1-bottom h3 {
+        padding-bottom: 20px;
+    }
+
+    .order h1 {
+        font-size: 40px;
+    }
+    
+    .order h3 {
+        font-size: 25px;
+        margin-bottom: 40px;
+        margin-top: 20px;
+    }
+    
+    .order a {
+        font-size: 18px;
+    }
+
 }
 
 @media (max-width: 350px) {
@@ -2033,5 +2191,28 @@ form {
 
     .section__content-box p {
         font-size: 16px;
+    }
+
+    .name {
+        margin-top: 0;
+    }
+
+    .name, .telephone, .message {
+        margin: 8px;
+        width: 280px;
+    }
+
+    .order h1 {
+        font-size: 33px;
+    }
+    
+    .order h3 {
+        font-size: 22px;
+        margin-bottom: 30px;
+        margin-top: 15px;
+    }
+
+    .order a {
+        font-size: 14px;
     }
 }

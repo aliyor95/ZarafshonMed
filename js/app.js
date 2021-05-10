@@ -86,3 +86,22 @@ $(function () {
 
 })(jQuery);
 
+// Smooth scroll
+$('[data-scroll]').on('click', function(event) {
+    event.preventDefault();
+
+    let = $this = $(this),
+    blockId = $this.data('scroll'),
+    blockOffset = $(blockId).offset().top;
+
+    $('#nav__link a').removeClass('active');
+    $this.addClass('active');
+
+    $('#nav__link').removeClass('active')
+    $('#nav_toggle').removeClass('active')
+    $('#nav').removeClass('active')
+
+    $('html, body').animate ({
+        scrollTop: blockOffset
+    }, 100);
+})
